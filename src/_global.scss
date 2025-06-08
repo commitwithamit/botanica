@@ -1,0 +1,304 @@
+// colors
+$wh100: rgba(255, 255, 255, 1);
+$wh75: rgba(255, 255, 255, 0.75);
+$wh50: rgba(255, 255, 255, 0.50);
+$wh25: rgba(255, 255, 255, 0.25);
+$green: #1B2316;
+$darkgreen: #222C1D;
+$lightgreen: rgb(34, 44, 29, 0.50);
+
+// reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: $wh75;
+}
+
+a,
+p {
+    font-size: 1rem;
+}
+
+
+// mixins
+@mixin glass($w, $h) {
+    width: $w;
+    height: $h;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12.5px);
+    border-radius: 77px;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 1.5px;
+        background: linear-gradient(130deg, rgb(225, 225, 225, .5) 0%, transparent 25%, transparent 65%, rgb(225, 225, 225, .5) 100%);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin inflex-center {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-h {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-center-v {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin form-container {
+    @include glass(100%, max-content);
+    border-radius: 18px;
+    padding: 35px;
+    font-size: 14px;
+
+
+    h2 {
+        font-size: 31px;
+        font-weight: 600;
+        color: $wh75;
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 1px solid $wh50;
+            background: $darkgreen;
+            border-radius: 8px;
+            height: 3rem;
+            padding: 0 8px;
+            opacity: 0.9;
+            font-family: "montserrat";
+
+            &::placeholder {
+                font-weight: 500;
+                color: #757575;
+            }
+
+            &::-ms-input-placeholder {
+                font-weight: 500;
+                color: #757575;
+            }
+        }
+
+        textarea {
+            padding: 12px 8px;
+            height: 120px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            border: none;
+            background: linear-gradient(-37.21deg, var(--btns) 1.37%, var(--secondary) 98.91%);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+                background: linear-gradient(-37.21deg, var(--btns) 10.37%, var(--secondary) 74.91%);
+            }
+        }
+
+    }
+
+}
+
+@mixin loader-bg($width, $height) {
+    width: $width;
+    height: $height;
+    background-image: linear-gradient(90deg,
+            $wh25 0px,
+            $wh50 60px,
+            $wh25 80px);
+    background-size: 300%;
+    background-position: 100% 0;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+}
+
+@mixin dark-loader-bg($width, $height) {
+    width: $width;
+    height: $height;
+    background-image: linear-gradient(90deg,
+            $wh25 0px,
+            $wh50 60px,
+            $wh25 80px);
+    background-size: 300%;
+    background-position: 100% 0;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+}
+
+@mixin price-container {
+    @include flex-center-v;
+    gap: 15px;
+
+    h4 {
+        font-weight: 400;
+        font-family: "montserrat";
+
+        &.mrp {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            color: $wh50;
+        }
+    }
+
+}
+
+@mixin short-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+// fonts
+@font-face {
+    font-family: josefin;
+    src: url(./src/assets/fonts/JosefinSans-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: josefin;
+    src: url(./src/assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+// Montserrat
+@font-face {
+    font-family: montserrat;
+    src: url(./src/assets/fonts/Montserrat-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(./src/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: josefin;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 2.5385rem + 2.0513vw, 5rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 2.1231rem + 1.2308vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.8rem, 1.7077rem + 0.4103vw, 2rem);
+}
+
+h5 {
+    font-size: clamp(1.6rem, 1.5308rem + 0.3077vw, 1.75rem);
+}
+
+h6 {
+    font-size: clamp(1.12rem, 1.1rem + 0.2051vw, 1.25rem);
+}
+
+// scrollbar
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    // background: #ab3030;
+    @include glass(auto, auto);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b6b6b62a;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555555d8;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -100% 0;
+    }
+}
