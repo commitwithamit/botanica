@@ -22,3 +22,45 @@ export function slugify(string) {
     result = string.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-");
     return result;
 }
+
+// calculates discount to show "45% off"
+export function discountCalculator(mrp, sp) {
+    // Discount Percentage = (Discount / Original Price) * 100 
+    return Math.round(((mrp - sp) / mrp) * 100);
+}
+
+// for putting commas in currency like "3,999"
+export function price(amount) {
+    return amount.toLocaleString("en-IN", { minimumFractionDigits: 0 });
+}
+
+// for filtering products by category
+export function getProductByCategroy(allProducts, slug) {
+    let convertedSlug = titleCase(slug[[slug.length - 1]]).replace("And", "&");
+    let filtered = allProducts.filter(p => p.category === convertedSlug);
+    return allProducts.filter(p => p.category === convertedSlug);
+}
+
+export function sortingProducts(allProducts, filter) {
+    let sortProducts = [...allProducts];
+    if (filter === "Price, Low to High") {
+        return sortProducts.sort((a, b) => { return a.price - b.price });
+    } else if (filter === "Price, High to Low") {
+        return sortProducts.sort((a, b) => { return b.price - a.price });
+    } else {
+        return sortProducts;
+    }
+}
+
+// export function getProductByCategroy(allProducts, slug, filter){
+//     let convertedSlug = titleCase(slug[[slug.length-1]]).replace("And", "&");
+//     let filtered = allProducts.filter(p=> p.category === convertedSlug);
+
+//     if(filter === "Price, Low to High"){
+//         return filtered.sort((a,b)=>{return a.price - b.price});
+//     }else if(filter === "Price, High to Low"){
+//         return filtered.sort((a,b)=>{return b.price - a.price});
+//     }else{
+//         return allProducts.filter(p=> p.category === convertedSlug);
+//     }
+// }

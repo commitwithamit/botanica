@@ -5,21 +5,20 @@ import viewIcon from "../../assets/img/eye.svg";
 
 import { SmallBtn } from "../../components/";
 
-import { useSelector } from "react-redux";
-import { selectAllProducts } from "../../store/slices/productsSlice";
-import { slugify } from "../../utils/customFunctions";
+import { discountCalculator, slugify } from "../../utils/customFunctions";
+import { Mrp, Sp } from "../../components/rupee";
 
-export default function ProductList() {
-    const allProducts = useSelector(selectAllProducts);
-    const str = "Foliage & Plants";
-    console.log(str.replaceAll(/[^\w\s]/g,""));
+export default function ProductList({products}) {
+    
+    // const str = "Foliage & Plants";
+    // console.log(str.replaceAll(/[^\w\s]/g, ""));
     // console.log(allProducts);
     return (
         <>
             {
-                allProducts.map((product, index) => {
+                products.map((product) => {
                     return (
-                        <div className="product-card" key={index}>
+                        <div className="product-card" key={product.id}>
                             <img loading="lazy" src={product.imgPng} alt={product.name} />
                             <div className="card-info">
                                 <h6>{product.name}</h6>
@@ -28,8 +27,13 @@ export default function ProductList() {
                                 </p>
                                 <div className="btn-con">
                                     <div className="double-price">
-                                        <h4 className="price">{`₹${product.price}`}</h4>
-                                        <h4 className="mrp">{`₹${product.mrp}`}</h4>
+                                        <h5 className="price">
+                                            <Sp>{product.price}</Sp>
+                                        </h5>
+                                        <h6 className="mrp">
+                                            <Mrp>{product.mrp}</Mrp>
+                                        </h6>
+                                        <p className="discount">{`${discountCalculator(product.mrp, product.price)}% off`}</p>
                                     </div>
                                     <div className="card-btns">
                                         <SmallBtn info={{ path: wishIcon, toolTip: true, msg: "Wishlist" }} />

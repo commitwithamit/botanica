@@ -1,30 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SortBy, TitleBanner } from "../../components";
 import ProductList from "./productsList";
+import { useSelector } from "react-redux";
 
 import ReactSlider from "react-slider";
+import { sortingProducts } from "../../utils/customFunctions";
 const MIN = 0;
 const MAX = 1200;
 
 export function Shop() {
     let [values, setValues] = useState([MIN, MAX]);
-    let [active, setActive] = useState(false);
+    let [filter, setFilter] = useState("Featured");
+    let [filterModal, setFilterModal] = useState(false);
+
+    const allProducts = useSelector((state) => state.products.data);
+    
+    let sortedProducts = useMemo(()=>{
+        return sortingProducts(allProducts, filter);
+    },[allProducts, filter]);
 
     useEffect(() => {
-        if (active) {
+        if (filterModal) {
             document.body.classList.add("modal-active");
         } else {
             document.body.classList.remove("modal-active");
         }
-    }, [active]);
-
+    }, [filterModal]);
     return (
         <>
-            <TitleBanner name="Shop"/>
-            
+            <TitleBanner name="Shop" />
+
             <section className="shop-con site-width padding-tb">
-                <div className={active ? "filter-sidebar" : "filter-sidebar closed"}>
-                    <span className="close-filter" onClick={() => setActive(false)}></span>
+                <div className={filterModal ? "filter-sidebar" : "filter-sidebar closed"}>
+                    <span className="close-filter" onClick={() => setFilterModal(false)}></span>
                     <div>
                         <h6>Plant Types</h6>
                         <ul>
@@ -67,14 +75,14 @@ export function Shop() {
                     </div>
                 </div>
                 {
-                    active && (
+                    filterModal && (
                         <div className="bg-close"></div>
                     )
                 }
                 <div className="products-con">
-                    <SortBy setToTrue={setActive} />
+                    <SortBy setFilterModal={setFilterModal} products={allProducts} filter={filter} setFilter={setFilter} />
                     <div className="product-listing">
-                        <ProductList />
+                        <ProductList products={sortedProducts}/>
                     </div>
                 </div>
             </section>

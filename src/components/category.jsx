@@ -1,12 +1,8 @@
 import { useSelector } from "react-redux";
 import { LoaderCollection, MainIconBtn } from ".";
-import { selectAllProducts, productStatus, ProductError } from "../store/slices/productsSlice";
-import { Link, useResolvedPath } from "react-router-dom";
 
 function CategorySection({basepath}) {
-    const products = useSelector(selectAllProducts);
-    const loading = useSelector(productStatus);
-    const error = useSelector(ProductError);
+    const products = useSelector((state) => state.products);
 
     return (
         <>
@@ -16,10 +12,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Herbs & Culinary</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Herbs & Culinary").length} items
+                                            {products.data.filter(items => items.category === "Herbs & Culinary").length} items
                                         </em>
                                     </p>
                             }
@@ -34,10 +30,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Succulents & Cacti</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Succulents & Cacti").length} items
+                                            {products.data.filter(items => items.category === "Succulents & Cacti").length} items
                                         </em>
                                     </p>
                             }
@@ -52,10 +48,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Bonsai & Miniature</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Bonsai & Miniature").length} items
+                                            {products.data.filter(items => items.category === "Bonsai & Miniature").length} items
                                         </em>
                                     </p>
                             }
@@ -70,10 +66,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Foliage Plants</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Foliage Plants").length} items
+                                            {products.data.filter(items => items.category === "Foliage Plants").length} items
                                         </em>
                                     </p>
                             }
@@ -88,10 +84,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Flowering Houseplants</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Flowering Houseplants").length} items
+                                            {products.data.filter(items => items.category === "Flowering Houseplants").length} items
                                         </em>
                                     </p>
                             }
@@ -106,10 +102,10 @@ function CategorySection({basepath}) {
                         <div>
                             <h6>Air Plants (Tillandsia)</h6>
                             {
-                                loading === "loading" ? <LoaderCollection /> :
+                                products.isLoading ? <LoaderCollection /> :
                                     <p>
                                         <em>
-                                            {products.filter(items => items.category === "Air Plants (Tillandsia)").length} items
+                                            {products.data.filter(items => items.category === "Air Plants (Tillandsia)").length} items
                                         </em>
                                     </p>
                             }

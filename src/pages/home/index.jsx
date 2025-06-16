@@ -1,6 +1,4 @@
-import { useSelector } from "react-redux";
-import { LoaderHome, ProductsCarousel, SectionHeading } from "../../components";
-import { ProductError, productStatus } from "../../store/slices/productsSlice";
+import { ProductsCarousel, SectionHeading } from "../../components";
 
 // img
 import ReviewsSlider from "./reviews";
@@ -9,16 +7,14 @@ import Banner from "./banner";
 
 
 export function Home() {
-    const loading = useSelector(productStatus);
-    const error = useSelector(ProductError);
 
-    if (loading === "loading" || loading === "failed") {
-        if (error) {
-            console.log(error);
-            return;
-        }
-            return <LoaderHome />;
-    }
+    // if (loading === "loading" || loading === "failed") {
+    //     if (error) {
+    //         console.log(error);
+    //         return;
+    //     }
+    //         return <LoaderHome />;
+    // }
     return (
         <>
             <section className="banner padding-tb">

@@ -6,36 +6,46 @@ import Footer from './layout/footer';
 import './style.scss'
 import { PageTop } from './components';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, selectAllProducts } from "./store/slices/productsSlice";
+import { fetchProducts } from "./store/slices/productsSlice";
 import { useEffect } from "react";
+import FlowerLoader from "./components/flowerLoader";
+import ErrorPage from "./pages/error";
 
 function App() {
   const location = useLocation();
   const hideHeaderFooterFor = ['/back-123'];
+  const isAuthPage = hideHeaderFooterFor.includes(location.pathname);
 
+  let error = useSelector(state=>state.products.isError);
+  let errorMsg = useSelector(state=>state.products.error);
+
+  
   // getting all the products from db
   const dispatch = useDispatch();
-  const products = useSelector(selectAllProducts);
-
+  const state = useSelector((state) => state.products);
+  
   useEffect(() => {
-    if (products.length === 0) {
-      dispatch(fetchProducts());
-    }
-  }, [dispatch, products.length]);
-
-  // console.log(products);
-
+    dispatch(fetchProducts())
+  }, [dispatch]);
+  
+  if(error && errorMsg != null){
+    return <ErrorPage/>
+  }
   return (
     <>
-      {!hideHeaderFooterFor.includes(location.pathname) && <Header />}
-      <main>
-        <PageTop />
-        <Outlet />
-      </main>
-      {!hideHeaderFooterFor.includes(location.pathname) && <Footer />}
+      {!isAuthPage && <Header />}
+      {state.isLoading ?
+        <main style={{ display: "flex", justifyContent: "center" }}>
+          <FlowerLoader />
+        </main> :
+        <main>
+          <PageTop />
+          <Outlet />
+        </main>
+      }
+      {!isAuthPage && <Footer />
+      }
     </>
   )
 }
-
-
 export default App;

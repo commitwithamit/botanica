@@ -8,9 +8,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fball-moss-1.webp?alt=media&token=5dc6b9dd-9fbc-4066-9abf-939f539075a2",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fball-moss-2.webp?alt=media&token=7ee88be9-b4a8-4589-bf02-81e5436f3ec5",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fball-moss-3.webp?alt=media&token=aa6779b3-0ba3-4929-a4bc-ac959295072e",
-      "mrp": "579",
+      "mrp": 1599,
       "name": "Ball Moss",
-      "price": "389",
+      "price": 899,
       "type": "none"
     },
     "pr02": {
@@ -21,9 +21,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fboston-fern-1.webp?alt=media&token=20710b91-ba2e-4a3f-bb11-82361d084fac",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fboston-fern-2.webp?alt=media&token=7637844e-5801-4cee-b0a5-f661e3c4e84b",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fboston-fern-3.webp?alt=media&token=1587e8e2-8bb9-4b3b-b10f-988bb1a7b2ce",
-      "mrp": "499",
+      "mrp": 739,
       "name": "Boston Fern",
-      "price": "299",
+      "price": 249,
       "type": "none"
     },
     "pr03": {
@@ -34,9 +34,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftillandsia-bergeri-1.webp?alt=media&token=5cdee3e6-bc90-4a5c-9047-d20e3a9206c5",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftillandsia-bergeri-2.webp?alt=media&token=b30e3437-0b92-4ae3-ac4e-5cd03147a5ef",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftillandsia-bergeri-3.webp?alt=media&token=04835be1-101a-4fdf-a738-2e50ce25c9be",
-      "mrp": "459",
+      "mrp": 2599,
       "name": "Tillandsia Bergeri",
-      "price": "399",
+      "price": 1599,
       "type": "none"
     },
     "pr04": {
@@ -47,9 +47,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmedusa's-head-1.webp?alt=media&token=9e1756d6-4f93-49eb-bf8d-6f0bd28a6049",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmedusa's-head-2.webp?alt=media&token=e6c15a04-e987-4d2a-afb8-879b9332661c",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmedusa's-head-3.webp?alt=media&token=2c0e94b6-bd6a-40ec-b5ff-97b169421062",
-      "mrp": "424",
+      "mrp": 759,
       "name": "Medusa's Head",
-      "price": "289",
+      "price": 359,
       "type": "New Launch"
     },
     "pr05": {
@@ -60,9 +60,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspanish-moss-1.webp?alt=media&token=8d165b78-2945-4426-b0c1-61fdf17b2d5a",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspanish-moss-2.webp?alt=media&token=cab91176-8926-40c1-81d0-d646f0124fe5",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspanish-moss-3.webp?alt=media&token=4649bbc7-32ce-41e6-b67e-33672624c2f5",
-      "mrp": "489",
+      "mrp": 899,
       "name": "Spanish Moss",
-      "price": "399",
+      "price": 459,
       "type": "none"
     },
     "pr06": {
@@ -73,9 +73,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fazalea-bonsai-1.webp?alt=media&token=63111444-be20-4c93-ab70-bf1c5cf08d19",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fazalea-bonsai-2.webp?alt=media&token=1df0193b-296c-4438-9b22-d91459d7766a",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fazalea-bonsai-3.webp?alt=media&token=dfe974d4-281d-4028-a378-e625e511c561",
-      "mrp": "1359",
+      "mrp": 3499,
       "name": "Azalea Bonsai",
-      "price": "899",
+      "price": 1999,
       "type": "New Launch"
     },
     "pr07": {
@@ -86,9 +86,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-elm-1.webp?alt=media&token=bb876ace-b916-479e-bd01-71c81844e212",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-elm-2.webp?alt=media&token=3bed52d6-120d-45f7-9b96-e0129ab96eb8",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-elm-3.webp?alt=media&token=3b5898dd-6fb3-4243-a3ca-c0d4039ec6f4",
-      "mrp": "1199",
+      "mrp": 3299,
       "name": "Chinese Elm",
-      "price": "759",
+      "price": 1699,
       "type": "none"
     },
     "pr08": {
@@ -99,9 +99,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fpine-bonsai-1.webp?alt=media&token=7649e381-b3a3-4964-ab4c-3d0184e75e2f",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fpine-bonsai-2.webp?alt=media&token=621aa252-05bd-40d7-8d5c-082661b7220e",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fpine-bonsai-3.webp?alt=media&token=abafdbcb-4512-4329-90c8-2dba323809c2",
-      "mrp": "1199",
+      "mrp": 1899,
       "name": "Pine Bonsai",
-      "price": "921",
+      "price": 1199,
       "type": "Trending"
     },
     "pr09": {
@@ -112,9 +112,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdaisy-1.webp?alt=media&token=887ade1a-5184-4a30-a07a-03488ed9db69",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdaisy-2.webp?alt=media&token=55ac7f4b-0928-4bc9-897d-4b37d687cd09",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdaisy-3.webp?alt=media&token=12c34051-9a6a-4320-aa55-e24b09446e33",
-      "mrp": "659",
+      "mrp": 689,
       "name": "Daisy",
-      "price": "499",
+      "price": 499,
       "type": "none"
     },
     "pr10": {
@@ -125,9 +125,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fgeranium-1.webp?alt=media&token=382e064c-7a10-4908-a61f-d0dff7967f3a",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fgeranium-2.webp?alt=media&token=6e98f20e-45f2-4273-968c-fdec2ac29e46",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fgeranium-3.webp?alt=media&token=87031fad-b9ae-47ad-ae71-3f7f3651b4e0",
-      "mrp": "614",
+      "mrp": 1259,
       "name": "Geranium",
-      "price": "499",
+      "price": 659,
       "type": "none"
     },
     "pr11": {
@@ -138,9 +138,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Flavender-1.webp?alt=media&token=7239e2bf-2f53-4ba4-8f38-3d635b882a50",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Flavender-2.webp?alt=media&token=9ce9b66a-810d-4701-a7aa-b9ce340fbeaa",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Flavender-3.webp?alt=media&token=eeef1581-edf4-4e83-9d5e-0333eb3493a9",
-      "mrp": "853",
+      "mrp": 1839,
       "name": "Lavender",
-      "price": "599",
+      "price": 1129,
       "type": "Top Seller"
     },
     "pr12": {
@@ -151,9 +151,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmarigold-1.webp?alt=media&token=b122ebcb-e3ca-4f42-a785-df08829441ad",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmarigold-2.webp?alt=media&token=8c8f5571-6ad9-4e4a-9d59-ad4dff1f2a78",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmarigold-3.webp?alt=media&token=a5770a9b-bfd4-4902-a3b4-4822bd164ef1",
-      "mrp": "589",
+      "mrp": 659,
       "name": "Marigold",
-      "price": "448",
+      "price": 459,
       "type": "none"
     },
     "pr13": {
@@ -164,9 +164,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frose-1.webp?alt=media&token=29c7bd54-01db-48b2-95f6-010bc594a56b",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frose-2.webp?alt=media&token=5a9d9da8-510b-417b-9c3c-21c4be896c1a",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frose-3.webp?alt=media&token=608d4799-b55c-4f32-ae1e-6094b8287641",
-      "mrp": "499",
+      "mrp": 999,
       "name": "Rose",
-      "price": "389",
+      "price": 629,
       "type": "none"
     },
     "pr14": {
@@ -177,9 +177,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftulip-1.webp?alt=media&token=cd421b63-cda3-42b4-a3fa-90114d79288a",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftulip-2.webp?alt=media&token=50cf6ee9-4e86-4419-9ef5-32a40133b73b",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftulip-3.webp?alt=media&token=df82d505-4e7a-4c7b-919d-09365ada3cd3",
-      "mrp": "450",
+      "mrp": 759,
       "name": "Tulip",
-      "price": "299",
+      "price": 499,
       "type": "Top Seller"
     },
     "pr15": {
@@ -190,9 +190,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fafrican-violet-1.webp?alt=media&token=139607d0-f9dc-4b91-a2ea-8624f2e1616d",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fafrican-violet-2.webp?alt=media&token=ea86c1f6-02c2-47b7-97e4-aa4426aabebb",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fafrican-violet-3.webp?alt=media&token=1333bba1-cc0b-4cef-a6f6-58b17d0d25ea",
-      "mrp": "550",
+      "mrp": 550,
       "name": "African Violet",
-      "price": "489",
+      "price": 489,
       "type": "Top Seller"
     },
     "pr16": {
@@ -203,9 +203,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbamboo-palm-1.webp?alt=media&token=6aee9de0-d3f7-452a-b400-f1f315bb8d47",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbamboo-palm-2.webp?alt=media&token=0345d08f-1014-44c2-814f-509cae314a44",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbamboo-palm-3.webp?alt=media&token=a8440bb0-129a-4d53-9812-1ca31279775f",
-      "mrp": "759",
+      "mrp": 759,
       "name": "Bamboo Palm",
-      "price": "359",
+      "price": 359,
       "type": "none"
     },
     "pr17": {
@@ -216,9 +216,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-evergreen-1.webp?alt=media&token=6bb9b0e5-baa6-427d-9f59-fc716f4783f3",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-evergreen-2.webp?alt=media&token=4f6e5a3a-0c8c-4900-b3d1-2d8e387bbe3e",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fchinese-evergreen-3.webp?alt=media&token=4d1b6050-dd60-4940-8d70-fae6b2502c26",
-      "mrp": "1499",
+      "mrp": 1499,
       "name": "Chinese Evergreen",
-      "price": "999",
+      "price": 999,
       "type": "none"
     },
     "pr18": {
@@ -229,9 +229,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmoney-plant-1.webp?alt=media&token=701c94a4-85ac-430c-aa30-a6a95bfbc3b4",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmoney-plant-2.webp?alt=media&token=82eca3aa-1aac-4511-b844-d3fb70714c1a",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fmoney-plant-3.webp?alt=media&token=7e6a84c8-ea24-49e3-8ffd-6437f5ba3179",
-      "mrp": "390",
+      "mrp": 1129,
       "name": "Money Plant",
-      "price": "299",
+      "price": 799,
       "type": "Trending"
     },
     "pr19": {
@@ -242,9 +242,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fphilodendron-1.webp?alt=media&token=bdd7fa46-ffe8-408e-95bc-89cee64ecfd3",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fphilodendron-2.webp?alt=media&token=f0042a9f-4142-44e1-8f36-3db8a383ab5f",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fphilodendron-3.webp?alt=media&token=dba6d50e-8ac6-45d2-8395-824422d784ae",
-      "mrp": "899",
+      "mrp": 899,
       "name": "Philodendron",
-      "price": "659",
+      "price": 659,
       "type": "Top Seller"
     },
     "pr20": {
@@ -255,9 +255,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspider-plant-1.webp?alt=media&token=443d9914-c62d-4c62-8963-58376ad0214f",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspider-plant-2.webp?alt=media&token=3eca7a73-9425-454b-86b7-99b0801a53fb",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fspider-plant-3.webp?alt=media&token=908ad4b9-50db-4733-99dd-45e24640485a",
-      "mrp": "899",
+      "mrp": 899,
       "name": "Spider Plant",
-      "price": "599",
+      "price": 599,
       "type": "none"
     },
     "pr21": {
@@ -268,9 +268,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbasil-1.webp?alt=media&token=342ad1f6-76c4-4bb5-9313-c0a9e0ccdec6",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbasil-2.webp?alt=media&token=d89650ac-c018-4750-a51d-ce715a81981f",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbasil-3.webp?alt=media&token=63172565-413d-4d4d-86f0-edf24f5f4cd0",
-      "mrp": "289",
+      "mrp": 459,
       "name": "Basil",
-      "price": "199",
+      "price": 199,
       "type": "none"
     },
     "pr22": {
@@ -281,9 +281,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdill-1.webp?alt=media&token=317b3347-76c8-458b-a620-eac4cc250eb3",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdill-2.webp?alt=media&token=daf162ab-6f22-44fe-b42a-92b5997c2af1",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fdill-3.webp?alt=media&token=1595beda-13aa-4aaa-b4f7-452df65a72f5",
-      "mrp": "368",
+      "mrp": 899,
       "name": "Dill",
-      "price": "255",
+      "price": 589,
       "type": "Top Seller"
     },
     "pr23": {
@@ -294,9 +294,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frosemary-1.webp?alt=media&token=06410cba-24f0-4218-87cf-8d70885fb4e0",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frosemary-2.webp?alt=media&token=841f64ef-c812-4489-99d9-a404563a1b1f",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Frosemary-3.webp?alt=media&token=6dd43ef1-1240-4672-afa3-539bce19c376",
-      "mrp": "1099",
+      "mrp": 899,
       "name": "Rosemary",
-      "price": "759",
+      "price": 659,
       "type": "none"
     },
     "pr24": {
@@ -307,9 +307,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsage-1.webp?alt=media&token=2510a418-abd7-491e-a51a-df7c19a72dbb",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsage-2.webp?alt=media&token=4d6be02b-1272-4d09-a064-641117cc7b60",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsage-3.webp?alt=media&token=a0579878-4e63-4bde-92e3-605d12b67c5d",
-      "mrp": "699",
+      "mrp": 1599,
       "name": "Sage",
-      "price": "459",
+      "price": 999,
       "type": "Top Seller"
     },
     "pr25": {
@@ -320,9 +320,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftarragon-1.webp?alt=media&token=6581f249-583e-4269-b140-0f1762cdf530",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftarragon-2.webp?alt=media&token=0a8bae53-277b-4e27-9ca8-a4220fa1e175",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Ftarragon-3.webp?alt=media&token=03e917ed-eb76-4c86-be1d-73d50bd1af90",
-      "mrp": "359",
+      "mrp": 2449,
       "name": "Tarragon",
-      "price": "299",
+      "price": 1599,
       "type": "Trending"
     },
     "pr26": {
@@ -333,9 +333,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Faloe-vera-1.webp?alt=media&token=8fbac827-7e71-436c-89e7-5d0933717bdd",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Faloe-vera-2.webp?alt=media&token=d6e8d3de-27e8-453e-acb3-d6aea9f29442",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Faloe-vera-3.webp?alt=media&token=1921c2e2-bb35-4a06-a6f7-7af2c480fe9f",
-      "mrp": "699",
+      "mrp": 699,
       "name": "Aloe Vera",
-      "price": "489",
+      "price": 489,
       "type": "none"
     },
     "pr27": {
@@ -346,9 +346,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbarrel-cactus-1.webp?alt=media&token=6710ab52-06d1-4d79-8940-b90387a20615",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbarrel-cactus-2.webp?alt=media&token=8a25bd4d-5642-4279-a882-b8dab7b29a34",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fbarrel-cactus-3.webp?alt=media&token=2e402dd9-70a8-4ae8-b27e-cbc4dec44d51",
-      "mrp": "1189",
+      "mrp": 689,
       "name": "Barrel Cactus",
-      "price": "829",
+      "price": 429,
       "type": "none"
     },
     "pr28": {
@@ -359,9 +359,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fecheveria-1.webp?alt=media&token=0387de49-c630-4bc1-9a71-18d8fe3202db",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fecheveria-2.webp?alt=media&token=f9115f20-1b5d-40a9-92fc-abbe9341eef4",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fecheveria-3.webp?alt=media&token=b7f374bb-70e1-498d-9c67-47de6a10ea4e",
-      "mrp": "499",
+      "mrp": 3699,
       "name": "Echeveria",
-      "price": "389",
+      "price": 2489,
       "type": "none"
     },
     "pr29": {
@@ -372,9 +372,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fhens-and-chicks-1.webp?alt=media&token=e2658987-cf0c-45f5-b073-5febb638a485",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fhens-and-chicks-2.webp?alt=media&token=af3f9ebe-5cff-42cd-9fa8-af4d757eb76e",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fhens-and-chicks-3.webp?alt=media&token=1f7f1808-a29f-4f6c-86da-f7fb9dde68de",
-      "mrp": "859",
+      "mrp": 1999,
       "name": "Hens & Chicks",
-      "price": "569",
+      "price": 1299,
       "type": "none"
     },
     "pr30": {
@@ -385,9 +385,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fjade-plant-1.webp?alt=media&token=195c5c15-be7c-4814-a292-46726a098954",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fjade-plant-2.webp?alt=media&token=f50ab249-e65e-49ad-9699-7173bc17d0ef",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fjade-plant-3.webp?alt=media&token=ef0b039a-92a7-4944-95df-46bc96b5447d",
-      "mrp": "999",
+      "mrp": 999,
       "name": "Jade Plant",
-      "price": "759",
+      "price": 759,
       "type": "Trending"
     },
     "pr31": {
@@ -398,9 +398,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fprickly-pear-cactus-1.webp?alt=media&token=2a233e3e-f5c1-47af-939c-3b6da04a8838",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fprickly-pear-cactus-2.webp?alt=media&token=d7d4e8c9-01fc-48ac-9521-a3675ebf0190",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fprickly-pear-cactus-3.webp?alt=media&token=1b0c4cbf-ab0f-453d-ac88-a69ab48a3e73",
-      "mrp": "1599",
+      "mrp": 789,
       "name": "Prickly Pear Cactus",
-      "price": "1099",
+      "price": 599,
       "type": "none"
     },
     "pr32": {
@@ -411,9 +411,9 @@
       "imgUrl1": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsedum-1.webp?alt=media&token=dc64030e-f8e3-48f7-bec9-0f9aa33385fc",
       "imgUrl2": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsedum-2.webp?alt=media&token=6f2ead6a-7055-4df4-a67a-914f383cbd87",
       "imgUrl3": "https://firebasestorage.googleapis.com/v0/b/botanica-9b18a.appspot.com/o/products%2Fsedum-3.webp?alt=media&token=86a56134-d432-496e-bea9-53c38a67e060",
-      "mrp": "859",
+      "mrp": 1699,
       "name": "Sedum",
-      "price": "699",
+      "price": 789,
       "type": "Trending"
     }
   }

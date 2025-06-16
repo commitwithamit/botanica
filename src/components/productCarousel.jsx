@@ -1,5 +1,5 @@
 // image
-import cartIcon from "../assets/img/cart.svg";
+import wishIcon from "../assets/img/wishicon.svg";
 import { SmallBtn } from "./buttonsAndHeadings";
 
 // Import Swiper React components
@@ -15,11 +15,13 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import { useSelector } from "react-redux";
-import { selectAllProducts } from "../store/slices/productsSlice";
 import { Link } from "react-router-dom";
+import { discountCalculator, slugify } from "../utils/customFunctions";
+
+import { Sp, Mrp } from "./rupee";
 
 export function ProductsCarousel({ range }) {
-    const products = useSelector(selectAllProducts);
+    const products = useSelector((state) => state.products);
     return (
         <div className="top-seller">
             <Swiper
@@ -41,23 +43,28 @@ export function ProductsCarousel({ range }) {
                 className="mySwiper"
             >
                 {
-                    products.filter(product => product.type === "Top Seller").slice(range[0],range[1]).map((product, key) => {
+                    products.data.filter(product => product.type === "Top Seller").slice(range[0], range[1]).map((product) => {
                         return (
-                            <SwiperSlide key={key}>
-                                <Link to={'/'} className="topseller-card">
+                            <SwiperSlide key={product.id} id={product.id}>
+                                <Link to={`collection/${slugify(product.category)}/${slugify(product.name)}`} className="topseller-card">
                                     <img loading="lazy" src={product.imgPng} alt={product.name} />
-                                
+
                                     <div className="card-info">
                                         <h4>{product.name}</h4>
                                         <p className="text-ellipsis">
                                             {product.description}
                                         </p>
                                         <div className="btn-con">
-                                            <div className="double-price">
-                                                <h4 className="price">{`₹${product.price}`}</h4>
-                                                <h4 className="mrp">{`₹${product.mrp}`}</h4>
+                                            <div className="double-price long-price">
+                                                <h5 className="price">
+                                                    <Sp>{product.price}</Sp>
+                                                </h5>
+                                                <h5 className="mrp">
+                                                    <Mrp>{product.mrp}</Mrp>
+                                                </h5>
+                                                <p className="discount">{`${discountCalculator(product.mrp, product.price)}% off`}</p>
                                             </div>
-                                            <SmallBtn info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }} />
+                                            <SmallBtn info={{ path:wishIcon, toolTip: true, msg: "Wishlist" }} style={{ marginLeft: "10px" }} />
                                         </div>
                                     </div>
                                 </Link>

@@ -6,6 +6,7 @@ $wh25: rgba(255, 255, 255, 0.25);
 $green: #1B2316;
 $darkgreen: #222C1D;
 $lightgreen: rgb(34, 44, 29, 0.50);
+$discountGreen: #7cfc00c9;
 
 // reset
 * {
@@ -185,19 +186,25 @@ p {
 
 @mixin price-container {
     @include flex-center-v;
-    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
 
+    h5,
     h4 {
         font-weight: 400;
         font-family: "montserrat";
-
-        &.mrp {
-            text-decoration: line-through;
-            font-size: 1.5rem;
-            color: $wh50;
-        }
     }
 
+    .mrp {
+        font-weight: 400;
+        font-family: "montserrat";
+        font-size: 1.3rem;
+        color: $wh75;
+    }
+
+    p.discount {
+        color: $discountGreen;
+    }
 }
 
 @mixin short-text {
@@ -300,5 +307,143 @@ h6 {
 @keyframes shimmer {
     to {
         background-position: -100% 0;
+    }
+}
+
+
+@mixin topselling-card-css($width, $height) {
+    @include glass($width, $height);
+    @include flex-center-v;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: unset;
+    padding: 3rem 2rem;
+    max-width: 350px;
+
+    &>img,
+    .lazyload-wrapper img {
+        max-width: 250px;
+        margin-top: -110px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        // h5 {
+        //     font-weight: 100;
+        // }
+
+        .text-ellipsis {
+            @include short-text;
+        }
+
+        .btn-con {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+// sorting options
+@mixin sorting-component {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    position: relative;
+    height: 40px;
+
+    &>p {
+        margin-top: 12px;
+    }
+
+    &>div {
+        position: relative;
+        right: 0;
+
+        .filter-icon {
+            display: none;
+            width: 25px;
+            height: max-content;
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                filter: invert(1) sepia(0%) saturate(7464%) hue-rotate(144deg) brightness(75%) contrast(111%);
+            }
+
+            .tooltip {
+                background: $darkgreen;
+
+                &::after {}
+            }
+        }
+    }
+
+    .sorting {
+        @include glass(max-content, 38px);
+        overflow: unset;
+        z-index: 3;
+        border-radius: 15px;
+        padding: 10px 30px 10px 15px;
+        transition: all .3s ease-in-out;
+
+        p {
+            cursor: default;
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        &:hover {
+            height: 240px;
+        }
+
+        &:hover ul {
+            opacity: 1;
+            pointer-events: unset;
+        }
+
+        &:hover img {
+            transform: rotate(180deg);
+        }
+
+        ul {
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+            padding: 10px 10px 0;
+            line-height: 2.5;
+            border-radius: 20px;
+            @include flex-col;
+            gap: 5px;
+            transition: all .2s ease-in;
+
+
+            li {
+                cursor: pointer;
+            }
+        }
+
+        img {
+            position: absolute;
+            right: 10px;
+            top: 16px;
+            transition: all .3s ease-in;
+            width: 10px;
+            opacity: .75;
+        }
     }
 }

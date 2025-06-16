@@ -47,22 +47,22 @@ function Header() {
                             <div className="drop-con">
                                 <ul className="dropdown">
                                     <li>
-                                        <Link to="plants/flowering-houseplants">Flowering Houseplants</Link>
+                                        <Link to="/collection/flowering-houseplants">Flowering Houseplants</Link>
                                     </li>
                                     <li>
-                                        <Link to="plants/succulents-cacti">Succulents & Cacti</Link>
+                                        <Link to="/collection/succulents-and-cacti">Succulents & Cacti</Link>
                                     </li>
                                     <li>
-                                        <Link to="plants/herbs-culinary">Herbs & Culinary</Link>
+                                        <Link to="/collection/herbs-and-culinary">Herbs & Culinary</Link>
                                     </li>
                                     <li>
-                                        <Link to="plants/bonsai">Bonsai & Miniature</Link>
+                                        <Link to="/collection/bonsai-and-miniature">Bonsai & Miniature</Link>
                                     </li>
                                     <li>
-                                        <Link to="plants/foliage">Foliage Plants</Link>
+                                        <Link to="/collection/foliage-plants">Foliage Plants</Link>
                                     </li>
                                     <li>
-                                        <Link to="plants/air-plants">Air Plants (Tillandsia)</Link>
+                                        <Link to="/collection/air-plants-tillandsia">Air Plants (Tillandsia)</Link>
                                     </li>
                                 </ul>
                             </div>

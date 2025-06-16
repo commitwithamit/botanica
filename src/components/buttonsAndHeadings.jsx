@@ -66,7 +66,7 @@ export function SmallBtn({ info }) {
                         to={link}
                         className={tooltip ? "btn-icon tooltip-con" : "btn-icon"}
                     >
-                        <img src={path} alt="add to cart" />
+                        <img src={path} alt={msg} />
                         {
                             tooltip && (
                                 <div className="tooltip">
@@ -81,7 +81,7 @@ export function SmallBtn({ info }) {
                             className={tooltip ? "btn-icon tooltip-con" : "btn-icon"}
                             onClick={handleChildClick}
                         >
-                            <img src={path} alt="add to cart" />
+                            <img src={path} alt={msg} />
                             {
                                 tooltip && (
                                     <div className="tooltip">

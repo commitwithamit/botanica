@@ -1,17 +1,14 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, selectAllProducts } from "../store/slices/productsSlice";
+
+import { useSelector } from "react-redux";
 
 export default function ReadData() {
-    const dispatch = useDispatch();
-    const products = useSelector(selectAllProducts);
+    const products = useSelector((state) => state.products);
 
-    useEffect(() => {
-        if (products.length === 0) {
-            dispatch(fetchProducts());
-        }
-    }, [dispatch, products.length]);
+    // useEffect(() => {
+    //     if (products.length === 0) {
+    //         dispatch(fetchProducts());
+    //     }
+    // }, [dispatch, products.data.length]);
 
     return (
         <div className="table-wrapper">
@@ -34,7 +31,7 @@ export default function ReadData() {
                 </thead>
                 <tbody>
                     {
-                        products.map((value, key) => {
+                        products.data.map((value, key) => {
                             return <tr key={key}>
                                 <td>{key}</td>
                                 <td>{value.id}</td>
