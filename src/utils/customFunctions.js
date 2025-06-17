@@ -35,20 +35,20 @@ export function price(amount) {
 }
 
 // for filtering products by category
-export function getProductByCategroy(allProducts, slug) {
-    let convertedSlug = titleCase(slug[[slug.length - 1]]).replace("And", "&");
-    let filtered = allProducts.filter(p => p.category === convertedSlug);
-    return allProducts.filter(p => p.category === convertedSlug);
-}
+// export function getProductByCategroy(allProducts, slug) {
+//     let convertedSlug = titleCase(slug[[slug.length - 1]]).replace("And", "&");
+//     return allProducts.filter(p => p.category === convertedSlug);
+// }
 
-export function sortingProducts(allProducts, filter) {
-    let sortProducts = [...allProducts];
-    if (filter === "Price, Low to High") {
-        return sortProducts.sort((a, b) => { return a.price - b.price });
-    } else if (filter === "Price, High to Low") {
-        return sortProducts.sort((a, b) => { return b.price - a.price });
-    } else {
-        return sortProducts;
+export function sortingProducts(sortType) {
+    return function (a, b) {
+        if (sortType === "Price, Low to High") {
+            return a.price - b.price;
+        } else if (sortType === "Price, High to Low") {
+            return b.price - a.price;
+        } else {
+            return 0;
+        }
     }
 }
 

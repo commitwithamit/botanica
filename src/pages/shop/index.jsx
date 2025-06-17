@@ -5,84 +5,116 @@ import { useSelector } from "react-redux";
 
 import ReactSlider from "react-slider";
 import { sortingProducts } from "../../utils/customFunctions";
-const MIN = 0;
-const MAX = 1200;
+import FlowerLoader from "../../components/flowerLoader";
+import { PiPlantThin } from "react-icons/pi";
+
 
 export function Shop() {
-    let [values, setValues] = useState([MIN, MAX]);
-    let [filter, setFilter] = useState("Featured");
-    let [filterModal, setFilterModal] = useState(false);
-
     const allProducts = useSelector((state) => state.products.data);
-    
-    let sortedProducts = useMemo(()=>{
-        return sortingProducts(allProducts, filter);
-    },[allProducts, filter]);
+    let loading = useSelector((state) => state.products.isLoading);
+
+    let minPrice = Math.min(...allProducts.map(obj => obj.price));
+    let maxPrice = Math.max(...allProducts.map(obj => obj.price));
+
+    let [range, setRange] = useState([minPrice, maxPrice]);
+    let [sortType, setSortType] = useState("Featured");
+    let [filterOpen, setFilterOpen] = useState(false);
+    let [selectedCategory, setSelectedCategory] = useState([]);
+    if (loading) {
+        return <FlowerLoader />
+    }
+
+    // making array of categroy filtered/selected by the user
+    function handleFilter(e) {
+        let selectedFilter = e.target.value;
+
+        setSelectedCategory(prev =>
+            prev.includes(selectedFilter) ?
+                prev.filter(val => val !== selectedFilter) : // remove category
+                [...prev, selectedFilter]   // add category
+        )
+    }
+
+    // comparing all products with array of categroy filtered/selected by the user and sorting then showing the filtered products
+    let filteredAndSorted = useMemo(() => {
+        return allProducts
+            .filter(p => {
+                if (selectedCategory.length === 0) return true; // all products
+                return selectedCategory.includes(p.category)
+            })
+            .filter(p => p.price >= range[0] && p.price <= range[1])
+            .sort(sortingProducts(sortType));
+    }, [allProducts, sortType, selectedCategory, range]);
 
     useEffect(() => {
-        if (filterModal) {
+        if (filterOpen) {
             document.body.classList.add("modal-active");
         } else {
             document.body.classList.remove("modal-active");
         }
-    }, [filterModal]);
+    }, [filterOpen]);
+
     return (
         <>
             <TitleBanner name="Shop" />
 
             <section className="shop-con site-width padding-tb">
-                <div className={filterModal ? "filter-sidebar" : "filter-sidebar closed"}>
-                    <span className="close-filter" onClick={() => setFilterModal(false)}></span>
+                <div className={filterOpen ? "filter-sidebar" : "filter-sidebar closed"}>
+                    <span className="close-filter" onClick={() => setFilterOpen(false)}></span>
                     <div>
                         <h6>Plant Types</h6>
                         <ul>
                             <li>
                                 <label htmlFor="t1">Flowering Houseplants
-                                    <input id="t1" name="plant-type" type="checkbox" />
+                                    <input value="Flowering Houseplants" onChange={(e) => handleFilter(e)} id="t1" type="checkbox" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="t2">Succulents & Cacti
-                                    <input id="t2" name="plant-type" type="checkbox" />
+                                    <input value="Succulents & Cacti" onChange={(e) => handleFilter(e)} id="t2" type="checkbox" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="t3">Herbs & Culinary
-                                    <input id="t3" name="plant-type" type="checkbox" />
+                                    <input value="Herbs & Culinary" onChange={(e) => handleFilter(e)} id="t3" type="checkbox" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="t4">Bonsai & Miniature
-                                    <input id="t4" name="plant-type" type="checkbox" />
+                                    <input value="Bonsai & Miniature" onChange={(e) => handleFilter(e)} id="t4" type="checkbox" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="t5">Foliage Plants
-                                    <input id="t5" name="plant-type" type="checkbox" />
+                                    <input value="Foliage Plants" onChange={(e) => handleFilter(e)} id="t5" type="checkbox" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="t6">Air Plants (Tillandsia)
-                                    <input id="t6" name="plant-type" type="checkbox" />
+                                    <input value="Air Plants (Tillandsia)" onChange={(e) => handleFilter(e)} id="t6" type="checkbox" />
                                 </label>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <h6>Price</h6>
-                        <ReactSlider className={"slider"} onChange={setValues} value={values} min={MIN} max={MAX} minDistance={10} />
-                        <p><b>Range :</b> <span className="rupee">₹</span>{values[0]} - <span className="rupee">₹</span>{values[1]}</p>
+                        <ReactSlider className={"slider"} onChange={setRange} value={range} min={minPrice} max={maxPrice} minDistance={100} pearling />
+                        <p><b>Range :</b> <span className="rupee">₹</span>{range[0]} - <span className="rupee">₹</span>{range[1]}</p>
                     </div>
                 </div>
                 {
-                    filterModal && (
+                    filterOpen && (
                         <div className="bg-close"></div>
                     )
                 }
                 <div className="products-con">
-                    <SortBy setFilterModal={setFilterModal} products={allProducts} filter={filter} setFilter={setFilter} />
-                    <div className="product-listing">
-                        <ProductList products={sortedProducts}/>
+                    <SortBy items={filteredAndSorted.length} sortType={sortType} setSortType={setSortType} setFilterOpen={setFilterOpen} />
+                    <div className={filteredAndSorted.length===0?"product-listing empty-products":"product-listing"}>
+                        {
+                            filteredAndSorted.length === 0 ?
+                                <p><PiPlantThin /> No plants found matching your filters.</p> :
+                                <ProductList products={filteredAndSorted} />
+                        }
                     </div>
                 </div>
             </section>

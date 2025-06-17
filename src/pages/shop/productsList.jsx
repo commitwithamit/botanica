@@ -10,9 +10,6 @@ import { Mrp, Sp } from "../../components/rupee";
 
 export default function ProductList({products}) {
     
-    // const str = "Foliage & Plants";
-    // console.log(str.replaceAll(/[^\w\s]/g, ""));
-    // console.log(allProducts);
     return (
         <>
             {

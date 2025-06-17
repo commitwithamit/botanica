@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { TitleBanner } from "../../../components";
 import { Link } from "react-router-dom";
-import { getProductByCategroy, slugify, sortingProducts, titleCase } from "../../../utils/customFunctions";
+import { slugify, sortingProducts } from "../../../utils/customFunctions";
 import { Sp, Mrp } from "../../../components/rupee";
 import { discountCalculator } from "../../../utils/customFunctions";
 import { SmallBtn } from "../../../components";
@@ -13,13 +13,13 @@ import FlowerLoader from "../../../components/flowerLoader";
 export function BonsaiAndMiniature() {
   let allProducts = useSelector(state => state.products.data);
   let loading = useSelector(state => state.products.isLoading);
-  let [sort, setSort] = useState(false);
-  let [filter, setFilter] = useState("Featured");
-  let path = location.pathname.split("/");
-  
-  let filterdProducts = useMemo(() => {
-    return sortingProducts(getProductByCategroy(allProducts, path), filter);
-  }, [allProducts, path, filter]);
+    let [sortType, setSortType] = useState("Featured");
+
+ let filterdProducts = useMemo(() => {
+    return allProducts
+          .filter(product=> product.category === "Bonsai & Miniature")
+          .sort(sortingProducts(sortType));
+  }, [allProducts, sortType]);
 
   if (loading) {
     return <FlowerLoader />
@@ -30,7 +30,7 @@ export function BonsaiAndMiniature() {
       <TitleBanner name="Bonsai & Miniature" />
       <section className="collection-con site-width padding-tb">
         <div className="col-1">
-          <SortBy setToTrue={setSort} products={filterdProducts} filter={filter} setFilter={setFilter} />
+          <SortBy products={filterdProducts} sortType={sortType} setSortType={setSortType} />
         </div>
         <div className="col-2">
           {

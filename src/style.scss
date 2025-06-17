@@ -1238,6 +1238,7 @@ h3.section-heading {
             @include sorting-component;
         }
 
+
         .product-listing {
             // @include flex-center-h;
             // flex-wrap: wrap;
@@ -1245,6 +1246,17 @@ h3.section-heading {
             grid-template-columns: 1fr 1fr 1fr;
             width: 100%;
             gap: 60px 20px;
+
+            /* if no products available */
+            &.empty-products {
+                grid-template-columns: 1fr;
+                justify-items: center;
+
+                svg {
+                    top: 1.7px;
+                    position: relative;
+                }
+            }
 
             .product-card {
                 @include glass(30%, 440px);

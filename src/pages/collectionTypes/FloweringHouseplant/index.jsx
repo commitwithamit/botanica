@@ -1,25 +1,25 @@
 import { useSelector } from "react-redux";
 import { TitleBanner } from "../../../components";
 import { Link } from "react-router-dom";
-import { sortingProducts, getProductByCategroy, slugify, titleCase } from "../../../utils/customFunctions";
+import { sortingProducts, slugify } from "../../../utils/customFunctions";
 import { Sp, Mrp } from "../../../components/rupee";
 import { discountCalculator } from "../../../utils/customFunctions";
 import { SmallBtn } from "../../../components";
 import wishIcon from "../../../assets/img/wishIcon.svg";
 import { SortBy } from "../../../components";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import FlowerLoader from "../../../components/flowerLoader";
 
 export function FloweringHouseplants() {
   let allProducts = useSelector(state => state.products.data);
   let loading = useSelector(state => state.products.isLoading);
-  let [sort, setSort] = useState(false);
-  let [filter, setFilter] = useState("Featured");
-  let path = location.pathname.split("/");
+  let [sortType, setSortType] = useState("Featured");
 
-   let filterdProducts = useMemo(() => {
-    return sortingProducts(getProductByCategroy(allProducts, path), filter);
-  }, [allProducts, path, filter]);
+  let filterdProducts = useMemo(() => {
+    return allProducts
+      .filter(product => product.category === "Flowering Houseplants")
+      .sort(sortingProducts(sortType));
+  }, [allProducts, sortType]);
 
 
   if (loading) {
@@ -31,7 +31,7 @@ export function FloweringHouseplants() {
       <TitleBanner name="Flowering Houseplants" />
       <section className="collection-con site-width padding-tb">
         <div className="col-1">
-          <SortBy setToTrue={setSort} products={filterdProducts} filter={filter} setFilter={setFilter} />
+          <SortBy products={filterdProducts} sortType={sortType} setSortType={setSortType} />
         </div>
         <div className="col-2">
           {
