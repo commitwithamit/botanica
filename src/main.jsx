@@ -5,7 +5,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import { Home, Shop, Cart, AboutUs, ContactUs, ProductDetail, PageNotFound, Collections} from "./pages";
 import AddProducts from './utils/AddProducts.jsx';
 import App from './App.jsx';
-import store from './store/index.js';
+import store from './store';
 import { Provider } from "react-redux";
 import ReadData from './utils/ReadData.jsx';
 import CollectionType from './pages/collectionTypes/index.jsx';
@@ -50,9 +50,9 @@ const router = createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  // </React.StrictMode>
 )

@@ -19,9 +19,7 @@ export function SortBy({items, sortType, setSortType, setFilterOpen}) {
                     <div className="sorting">
                         <p>Sort by : <span>{sortType}</span></p>
                         <ul>
-                            <li onClick={() => setSortType("Featured")}>Featured</li>
                             <li onClick={() => setSortType("Latest")}>Latest</li>
-                            <li onClick={() => setSortType("Best Selling")}>Best Selling</li>
                             <li onClick={() => setSortType("Price, Low to High")}>Price, Low to High</li>
                             <li onClick={() => setSortType("Price, High to Low")}>Price, High to Low</li>
                         </ul>

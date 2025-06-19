@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export function Counter() {
+    // uplift the state to productdetail page and cart 
     const [count, setCount] = useState(1);
     return (
         <div className="counter">

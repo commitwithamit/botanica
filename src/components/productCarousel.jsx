@@ -46,7 +46,8 @@ export function ProductsCarousel({ range }) {
                     products.data.filter(product => product.type === "Top Seller").slice(range[0], range[1]).map((product) => {
                         return (
                             <SwiperSlide key={product.id} id={product.id}>
-                                <Link to={`collection/${slugify(product.category)}/${slugify(product.name)}`} className="topseller-card">
+                                <Link to={`/collection/${slugify(product.category)}/${slugify(product.name)}`} className="topseller-card">
+                                {/* <Link to={`collection/${slugify(product.category)}/${slugify(product.name)}`} className="topseller-card"> */}
                                     <img loading="lazy" src={product.imgPng} alt={product.name} />
 
                                     <div className="card-info">

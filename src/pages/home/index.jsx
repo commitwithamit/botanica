@@ -17,7 +17,7 @@ export function Home() {
     // }
     return (
         <>
-            <section className="banner padding-tb">
+            <section className="banner padding-tb" style={{paddingBottom:"0px"}}>
                 <Banner />
             </section>
 
@@ -27,7 +27,7 @@ export function Home() {
                 <ProductsCarousel range={[3, 6]} />
             </section>
 
-            <section className="site-width padding-tb">
+            <section className="site-width padding-tb bg-with-leaf">
                 <SectionHeading name="Shop By Category" />
                 <CategorySection basepath={"collection/"}/>
             </section>

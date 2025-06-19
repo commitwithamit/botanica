@@ -44,7 +44,7 @@ export function MainIconBtn({ info: { name, path, img, setChangeBtn } }) {
 }
 
 // square btn (add to cart/wishlist/view)
-export function SmallBtn({ info }) {
+export function SmallBtn({ info, onClick }) {
     // info={{path:wishIcon, toolTip:true, msg:"Wishlist", link:"/abc"}}
     const { path, toolTip, msg, link } = info;
     const [tooltip, setTooltip] = useState(false);
@@ -79,7 +79,7 @@ export function SmallBtn({ info }) {
                     (
                         <button
                             className={tooltip ? "btn-icon tooltip-con" : "btn-icon"}
-                            onClick={handleChildClick}
+                            onClick={onClick}
                         >
                             <img src={path} alt={msg} />
                             {

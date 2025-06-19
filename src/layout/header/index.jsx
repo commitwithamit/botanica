@@ -85,7 +85,7 @@ function Header() {
                         </button>
                     </div>
                     <div>
-                        <img src={user} alt="serach icon" />
+                        <img src={user} alt="user profile" />
                     </div>
                     <div>
                         <Link to="cart" >
@@ -102,22 +102,22 @@ function Header() {
                                     <h6>Plant Types</h6>
                                     <ul>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/flowering-houseplants">Flowering Houseplants</Link>
+                                            <Link onClick={closeMenu} to="/collection/flowering-houseplants">Flowering Houseplants</Link>
                                         </li>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/succulents-cacti">Succulents & Cacti</Link>
+                                            <Link onClick={closeMenu} to="/collection/succulents-and-cacti">Succulents & Cacti</Link>
                                         </li>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/herbs-culinary">Herbs & Culinary</Link>
+                                            <Link onClick={closeMenu} to="/collection/herbs-and-culinary">Herbs & Culinary</Link>
                                         </li>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/bonsai">Bonsai & Miniature</Link>
+                                            <Link onClick={closeMenu} to="/collection/bonsai-and-miniature">Bonsai & Miniature</Link>
                                         </li>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/foliage">Foliage Plants</Link>
+                                            <Link onClick={closeMenu} to="/collection/foliage-plants">Foliage Plants</Link>
                                         </li>
                                         <li>
-                                            <Link onClick={closeMenu} to="plants/air-plants">Air Plants (Tillandsia)</Link>
+                                            <Link onClick={closeMenu} to="/collection/air-plants-tillandsia">Air Plants (Tillandsia)</Link>
                                         </li>
                                     </ul>
                                 </div>

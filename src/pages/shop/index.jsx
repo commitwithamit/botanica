@@ -17,7 +17,7 @@ export function Shop() {
     let maxPrice = Math.max(...allProducts.map(obj => obj.price));
 
     let [range, setRange] = useState([minPrice, maxPrice]);
-    let [sortType, setSortType] = useState("Featured");
+    let [sortType, setSortType] = useState("Latest");
     let [filterOpen, setFilterOpen] = useState(false);
     let [selectedCategory, setSelectedCategory] = useState([]);
     if (loading) {

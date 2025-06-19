@@ -6,7 +6,7 @@ import Footer from './layout/footer';
 import './style.scss'
 import { PageTop } from './components';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "./store/slices/productsSlice";
+import { fetchProducts } from "./store/slices/fetchProducts";
 import { useEffect } from "react";
 import FlowerLoader from "./components/flowerLoader";
 import ErrorPage from "./pages/error";
@@ -39,7 +39,8 @@ function App() {
           <FlowerLoader />
         </main> :
         <main>
-          <PageTop />
+          {/* PageTop - if you're in the middle of a page and you click a link and next page opens but the new page scrollposition is same as the previous one */}
+          <PageTop /> 
           <Outlet />
         </main>
       }

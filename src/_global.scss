@@ -25,6 +25,14 @@ p {
 
 
 // mixins
+
+@mixin leaf-bg {
+    background-image: url(/src/assets/img/pexels-dariuskrs-2609107.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 @mixin glass($w, $h) {
     width: $w;
     height: $h;
@@ -408,7 +416,7 @@ h6 {
         }
 
         &:hover {
-            height: 240px;
+            height: 165px;
         }
 
         &:hover ul {

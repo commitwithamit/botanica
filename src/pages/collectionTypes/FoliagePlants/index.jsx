@@ -13,7 +13,7 @@ import FlowerLoader from "../../../components/flowerLoader";
 export function FoliagePlants() {
    let allProducts = useSelector(state => state.products.data);
   let loading = useSelector(state => state.products.isLoading);
-  let [sortType, setSortType] = useState("Featured");
+  let [sortType, setSortType] = useState("Latest");
 
   let filterdProducts = useMemo(() => {
     return allProducts
@@ -31,7 +31,7 @@ export function FoliagePlants() {
       <TitleBanner name="Foliage Plants" />
       <section className="collection-con site-width padding-tb">
         <div className="col-1">
-          <SortBy products={filterdProducts} sortType={sortType} setSortType={setSortType} />
+          <SortBy items={filterdProducts.length} sortType={sortType} setSortType={setSortType} />
         </div>
         <div className="col-2">
           {

@@ -7,4 +7,5 @@ export * from "./productCarousel";
 export * from "./sorting";
 export * from "./tabs";
 export * from "./loader";
-export * from "./otherPageBanner.jsx"
+export * from "./otherPageBanner.jsx";
+export * from "./rupee.jsx";

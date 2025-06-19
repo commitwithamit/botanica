@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InnerImageZoom from 'custom-react-inner-image-zoom';
 import 'custom-react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 
@@ -25,11 +25,14 @@ export function ProductDetail() {
         return <FlowerLoader />
     }
 
-    const [productDetail] = allProducts.filter((val) => val.name.replace("'","") === plantName);
-    let firstImg = productDetail.imgUrl1;
+    const [productDetail] = allProducts.filter((val) => val.name.replace("'", "") === plantName);
 
+    const [mainImg, setMainImg] = useState(productDetail.imgUrl1);
     const [changeBtn, setChangeBtn] = useState(false);
-    const [mainImg, setMainImg] = useState(firstImg);
+
+    useEffect(() => {
+        setMainImg(productDetail.imgUrl1);
+    }, [productDetail]);
 
     const tabsData = [
         { label: "Description", content: "Plants are essential to life on Earth, providing oxygen, food, and habitat for countless organisms. They come in an astonishing variety of shapes, sizes, and colors, from towering trees to delicate flowers. Photosynthesis is their remarkable process of converting sunlight into energy, a vital function that sustains most life forms. Many plants have adapted to thrive in specific environments, such as cacti in deserts or ferns in rainforests. Besides their ecological importance, plants also offer medicinal properties, with numerous species used in traditional and modern medicine. Their beauty and diversity continue to inspire gardeners, botanists, and nature lovers around the world. Additionally, plants play a crucial role in combating climate change by absorbing carbon dioxide and releasing oxygen. Through their roots, they help prevent soil erosion and maintain the earth’s fertility. From providing raw materials for construction and textiles to enhancing mental well-being, the significance of plants in our daily lives cannot be overstated." },
@@ -40,22 +43,17 @@ export function ProductDetail() {
         <>
             <section className="site-width padding-tb product-detail-con">
                 <div className="col product-img-con">
-                    <div className="sml-img">
-                        <img loading="lazy" src={productDetail.imgUrl1} onClick={() => setMainImg(productDetail.imgUrl1)} alt="product image 1" />
-                        <img loading="lazy" src={productDetail.imgUrl2} onClick={() => setMainImg(productDetail.imgUrl2)} alt="product image 2" />
-                        <img loading="lazy" src={productDetail.imgUrl3} onClick={() => setMainImg(productDetail.imgUrl3)} alt="product image 3" />
-                    </div>
-                    <div className="big-img">
-                        {/* <img src={productImg1} alt="product image" /> */}
+                    <img loading="lazy" src={productDetail.imgUrl1} onClick={() => setMainImg(productDetail.imgUrl1)} alt="product image 1" className="sm-img" />
+                    <img loading="lazy" src={productDetail.imgUrl2} onClick={() => setMainImg(productDetail.imgUrl2)} alt="product image 2" className="sm-img" />
+                    <img loading="lazy" src={productDetail.imgUrl3} onClick={() => setMainImg(productDetail.imgUrl3)} alt="product image 3" className="sm-img" />
 
-                        <InnerImageZoom
-                            src={mainImg}
-                            zoomSrc={mainImg}
-                            zoomScale={2}
-                            zoomType="hover"
-                            hideHint={true}
-                        />
-                    </div>
+                    <InnerImageZoom
+                        src={mainImg}
+                        zoomSrc={mainImg}
+                        zoomScale={2}
+                        zoomType="hover"
+                        hideHint={true}
+                    />
                 </div>
                 <div className="col">
                     <div>

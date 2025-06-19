@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 import { MainBtn, SectionHeading, SmallBtn } from "../../components";
 import BannerSlider from "./bannerSlider";
+import { Sp, Mrp } from "../../components/rupee";
 
+import { discountCalculator, slugify } from "../../utils/customFunctions";
+
+import { Link } from "react-router-dom";
 // image
 import play from "../../assets/img/play.svg";
 import cartIcon from "../../assets/img/cart.svg";
 
 // store
-import { useSelector } from "react-redux";
-import { discountCalculator } from "../../utils/customFunctions";
-import { Sp, Mrp } from "../../components/rupee";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../../store/slices/addToCart";
 
-import { slugify } from "../../utils/customFunctions";
 
 function Banner() {
     const [active, setActive] = useState(false);
-
     const products = useSelector((state) => state.products);
+    const cart = useSelector((state) => state.cart);
+    let dispatch = useDispatch();
+
+    console.log("cart: ", cart);
 
     useEffect(() => {
         if (active) {
@@ -101,7 +105,17 @@ function Banner() {
                                     </div>
                                     <div className="btn-con">
                                         <MainBtn info={{ name: "Buy Now", path: "/" }} />
-                                        <SmallBtn info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }} />
+                                        <SmallBtn
+                                            info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }}
+                                            onClick={() => dispatch(addItem({
+                                                id: product.id,
+                                                name: product.name,
+                                                category: product.category,
+                                                price: product.price,
+                                                mrp: product.mrp,
+                                                img: product.imgPng
+                                            }))}
+                                        />
                                     </div>
                                 </div>
                             </div>
