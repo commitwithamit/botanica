@@ -3,30 +3,34 @@ import carret from "../../assets/img/carret.svg";
 import cart from "../../assets/img/cart.svg";
 import search from "../../assets/img/search.svg";
 import user from "../../assets/img/person.svg";
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function Header() {
     const [trigger, setTrigger] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
 
-    useEffect(()=>{
-        if(openSearch === true){
+    let cartCount = useSelector(state => state.cart.totalItems);
+
+    useEffect(() => {
+        if (openSearch === true) {
             let search = document.querySelector(".search-box input");
             search.focus();
         }
     }, [openSearch])
 
-    useEffect(()=>{
+    useEffect(() => {
         const body = document.querySelector("body");
-        if(trigger === true){
+        if (trigger === true) {
             body.style.overflow = "hidden";
-        }else{
+        } else {
             body.style.overflow = "auto";
         }
-    },[trigger]);
+    }, [trigger]);
 
-    const closeMenu = ()=>{
+    const closeMenu = () => {
         setTrigger(false);
     }
     return (
@@ -78,7 +82,7 @@ function Header() {
                 <div className="right-part">
                     <div className={openSearch ? "search-box open" : "search-box"}>
                         <div>
-                            <input type="text" name="serach"/>
+                            <input type="text" name="serach" />
                         </div>
                         <button>
                             <img src={search} onClick={() => setOpenSearch(!openSearch)} alt="serach icon" />
@@ -87,9 +91,10 @@ function Header() {
                     <div>
                         <img src={user} alt="user profile" />
                     </div>
-                    <div>
+                    <div className="cart-icon-con">
+                        {cartCount > 0 && <span>{cartCount}</span>}
                         <Link to="cart" >
-                            <img src={cart} alt="cart icon" className="cart-icon"/>
+                            <img src={cart} alt="cart icon" className="cart-icon" />
                         </Link>
                     </div>
                     <div className="mob-menu">

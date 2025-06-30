@@ -1,6 +1,5 @@
 
-import { TitleBanner } from "../../components";
-import CategorySection from "../../components/category";
+import { TitleBanner, CategorySection } from "../../components";
 
 export function Collections() {
 

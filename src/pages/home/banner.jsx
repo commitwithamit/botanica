@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { MainBtn, SectionHeading, SmallBtn } from "../../components";
+import { MainBtn, SectionHeading, SmallBtn, Sp, Mrp } from "../../components";
 import BannerSlider from "./bannerSlider";
-import { Sp, Mrp } from "../../components/rupee";
 
 import { discountCalculator, slugify } from "../../utils/customFunctions";
 
@@ -14,14 +13,11 @@ import cartIcon from "../../assets/img/cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../store/slices/addToCart";
 
-
 function Banner() {
     const [active, setActive] = useState(false);
     const products = useSelector((state) => state.products);
     const cart = useSelector((state) => state.cart);
     let dispatch = useDispatch();
-
-    console.log("cart: ", cart);
 
     useEffect(() => {
         if (active) {
@@ -104,7 +100,7 @@ function Banner() {
                                         <p className="discount">{`${discountCalculator(product.mrp, product.price)}% off`}</p>
                                     </div>
                                     <div className="btn-con">
-                                        <MainBtn info={{ name: "Buy Now", path: "/" }} />
+                                        <MainBtn info={{ name: "Buy Now", path: `collection/${slugify(product.category)}/${slugify(product.name)}` }} />
                                         <SmallBtn
                                             info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }}
                                             onClick={() => dispatch(addItem({

@@ -14,28 +14,63 @@ const cartReducer = createSlice({
     },
     reducers: {
         addItem: (state, action) => {
-            console.log("action: ", action.payload);
             let itemExist = state.selectedItems.some((pro) => pro.id === action.payload.id);
             if (!itemExist) {
-                if(action.payload.quantity){
-                    state.selectedItems.push({...action.payload});
-                }else{
-                    state.selectedItems.push({...action.payload, quantity:1});
+                if (action.payload.quantity) {
+                    state.selectedItems.push({ ...action.payload });
+                } else {
+                    state.selectedItems.push({ ...action.payload, quantity: 1 });
                 }
-                state.totalItems += 1; 
-                state.totalMrp = state.selectedItems.reduce((prev, curr)=> prev + curr.mrp,0);
+                state.totalItems += 1;
+                calculateMrpAndSp(state);
+                calculateOtherCharges(state);
             }
         },
-        removeItem: {},
-        increaseQuantity: {},
-        decreaseQuantity: {},
+        removeItem: (state, action) => {
+            let itemExist = state.selectedItems.findIndex(val => val.id === action.payload);
+            if (itemExist !== -1) {
+                state.selectedItems.splice(itemExist, 1);
+                state.totalItems -= 1;
+                calculateMrpAndSp(state);
+                calculateOtherCharges(state);
+            }
+            
+        },
+        incQuantity: (state, action) => {
+            let itemExist = state.selectedItems.find(val => val.id === action.payload);
+            if(itemExist){
+                itemExist.quantity+=1;
+                calculateMrpAndSp(state);
+                calculateOtherCharges(state);
+            }
+        },
+        decQuantity: (state, action) => {
+            let itemExist = state.selectedItems.find(val => val.id === action.payload);
+            if(itemExist){
+                itemExist.quantity-=1;
+                calculateMrpAndSp(state);
+                calculateOtherCharges(state);
+            }
+        },
     }
 });
 
-// function calculateMrpAndSp(mrp, sp){
-//     let 
-// }
-// console.log(state.selectedProducts);
+function calculateMrpAndSp(state) {
+    state.totalMrp = state.selectedItems.reduce((prev, curr) => prev + curr.mrp * curr.quantity, 0);
+    state.totalSp = state.selectedItems.reduce((prev, curr) => prev + curr.price * curr.quantity, 0);
+}
+function calculateOtherCharges(state) {
+    // delivery charges
+    if (state.totalSp > 2999 && state.selectedItems.length > 0) {
+        state.deliverCharges = 0;
+    } else if (state.selectedItems.length === 0) {
+        state.deliverCharges = 0;
+    } else if (state.totalSp < 2999 && state.selectedItems.length > 0) {
+        state.deliverCharges = 115;
+    }
 
-export const { addItem } = cartReducer.actions;
+    state.platformFee = state.selectedItems.length > 0 ? 15 : 0;
+}
+
+export const { addItem, removeItem, incQuantity, decQuantity } = cartReducer.actions;
 export default cartReducer.reducer;

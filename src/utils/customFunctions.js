@@ -19,7 +19,7 @@ export function titleCase(name) {
 // Ball Moss
 export function slugify(string) {
     let result = "";
-    result = string.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-");
+    result = string.toLowerCase().replace(" & ", " and ").replace(/[^\w\s]/g, "").replace(/\s+/g, "-");
     return result;
 }
 

@@ -21,7 +21,7 @@ export function MainBtn({ info: { name, path } }) {
 }
 
 // longer button with arrow
-export function MainIconBtn({ info: { name, path, img, setChangeBtn } }) {
+export function MainIconBtn({ info: { name, path, img, handleAddToCart } }) {
     return (
         <>
             {
@@ -33,7 +33,7 @@ export function MainIconBtn({ info: { name, path, img, setChangeBtn } }) {
                         </svg>
                     </Link>
                 ) : (
-                    <button className='btns' onClick={() => setChangeBtn(true)}>
+                    <button className='btns' onClick={handleAddToCart}>
                         {name}
                         <img src={img} alt={`${name} icon`} />
                     </button>
@@ -52,7 +52,6 @@ export function SmallBtn({ info, onClick }) {
     const handleChildClick = (event) => {
         event.preventDefault();
     }
-
     useEffect(() => {
         if (toolTip === true) {
             setTooltip(true);

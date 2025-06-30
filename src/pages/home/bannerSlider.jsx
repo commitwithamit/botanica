@@ -8,13 +8,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
-import { MainBtn, SmallBtn } from "../../components";
-import { useSelector } from "react-redux";
-import { slugify } from "../../utils/customFunctions";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { addItem } from "../../store/slices/addToCart";
+import { MainBtn, SmallBtn } from "../../components";
+import { slugify } from "../../utils/customFunctions";
 
 export default function BannerSlider() {
     const products = useSelector((state) => state.products);
+    let dispatch = useDispatch();
     return (
         <>
             <Swiper
@@ -45,8 +48,18 @@ export default function BannerSlider() {
                                     </Link>
                                     <p>Trendy House Plant</p>
                                     <div className="btn-con">
-                                        <MainBtn info={{ name: "Buy Now", path: "/" }} />
-                                        <SmallBtn info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }} />
+                                        <MainBtn info={{ name: "Buy Now", path: `collection/${slugify(product.category)}/${slugify(product.name)}` }} />
+                                        <SmallBtn
+                                            info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }}
+                                            onClick={() => dispatch(addItem({
+                                                id: product.id,
+                                                name: product.name,
+                                                category: product.category,
+                                                price: product.price,
+                                                mrp: product.mrp,
+                                                img: product.imgPng
+                                            }))}
+                                        />
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { LoaderCollection, MainIconBtn } from ".";
 
-function CategorySection({basepath}) {
+export function CategorySection({basepath}) {
     const products = useSelector((state) => state.products);
 
     return (
@@ -119,4 +119,3 @@ function CategorySection({basepath}) {
         </>
     )
 }
-export default CategorySection;

@@ -1,20 +1,11 @@
-import { ProductsCarousel, SectionHeading } from "../../components";
+import { ProductsCarousel, SectionHeading, CategorySection } from "../../components";
 
 // img
 import ReviewsSlider from "./reviews";
-import CategorySection from "../../components/category";
 import Banner from "./banner";
 
 
 export function Home() {
-
-    // if (loading === "loading" || loading === "failed") {
-    //     if (error) {
-    //         console.log(error);
-    //         return;
-    //     }
-    //         return <LoaderHome />;
-    // }
     return (
         <>
             <section className="banner padding-tb" style={{paddingBottom:"0px"}}>

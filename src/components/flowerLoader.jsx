@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function FlowerLoader() {
+export function FlowerLoader() {
     return (
         <div className="flower-con">
             <div className="flower">

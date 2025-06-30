@@ -3,13 +3,24 @@ import cartIcon from "../../assets/img/cart.svg";
 import wishIcon from "../../assets/img/wishicon.svg";
 import viewIcon from "../../assets/img/eye.svg";
 
-import { SmallBtn } from "../../components/";
-
 import { discountCalculator, slugify } from "../../utils/customFunctions";
-import { Mrp, Sp } from "../../components/rupee";
+import { Mrp, Sp, SmallBtn } from "../../components";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../store/slices/addToCart";
 
-export default function ProductList({products}) {
-    
+export default function ProductList({ products }) {
+    const dispatch = useDispatch();
+    function handleAddToCart(product) {
+        dispatch(addItem({
+            id: product.id,
+            name: product.name,
+            category: product.category,
+            price: product.price,
+            mrp: product.mrp,
+            img: product.imgPng
+        }));
+    }
+
     return (
         <>
             {
@@ -34,7 +45,7 @@ export default function ProductList({products}) {
                                     </div>
                                     <div className="card-btns">
                                         <SmallBtn info={{ path: wishIcon, toolTip: true, msg: "Wishlist" }} />
-                                        <SmallBtn info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }} />
+                                        <SmallBtn info={{ path: cartIcon, toolTip: true, msg: "Add to cart" }} onClick={() => handleAddToCart(product)} />
                                         <SmallBtn info={{ path: viewIcon, toolTip: true, msg: "Quick View", link: `/collection/${slugify(product.category)}/${slugify(product.name)}` }} />
                                     </div>
                                 </div>

@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { SortBy, TitleBanner } from "../../components";
+import { SortBy, TitleBanner, FlowerLoader } from "../../components";
 import ProductList from "./productsList";
 import { useSelector } from "react-redux";
 
 import ReactSlider from "react-slider";
 import { sortingProducts } from "../../utils/customFunctions";
-import FlowerLoader from "../../components/flowerLoader";
 import { PiPlantThin } from "react-icons/pi";
 
 
