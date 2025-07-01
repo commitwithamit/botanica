@@ -34,20 +34,20 @@ const cartReducer = createSlice({
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
-            
+
         },
         incQuantity: (state, action) => {
             let itemExist = state.selectedItems.find(val => val.id === action.payload);
-            if(itemExist){
-                itemExist.quantity+=1;
+            if (itemExist) {
+                itemExist.quantity += 1;
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
         },
         decQuantity: (state, action) => {
             let itemExist = state.selectedItems.find(val => val.id === action.payload);
-            if(itemExist){
-                itemExist.quantity-=1;
+            if (itemExist && itemExist.quantity > 1) {
+                itemExist.quantity -= 1;
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
@@ -60,16 +60,24 @@ function calculateMrpAndSp(state) {
     state.totalSp = state.selectedItems.reduce((prev, curr) => prev + curr.price * curr.quantity, 0);
 }
 function calculateOtherCharges(state) {
-    // delivery charges
-    if (state.totalSp > 2999 && state.selectedItems.length > 0) {
-        state.deliverCharges = 0;
-    } else if (state.selectedItems.length === 0) {
-        state.deliverCharges = 0;
-    } else if (state.totalSp < 2999 && state.selectedItems.length > 0) {
-        state.deliverCharges = 115;
-    }
+    const hasItems = state.selectedItems.length > 0;
+    const totalSp = state.totalSp;
 
-    state.platformFee = state.selectedItems.length > 0 ? 15 : 0;
+    // delivery charges
+    state.deliverCharges = !hasItems || totalSp > 2999 ? 0 : 115;
+    // platform fee
+    state.platformFee = hasItems ? 15 : 0;
+
+    // old logic
+    // if (state.totalSp > 2999 && state.selectedItems.length > 0) {
+    //     state.deliverCharges = 0;
+    // } else if (state.selectedItems.length === 0) {
+    //     state.deliverCharges = 0;
+    // } else if (state.totalSp < 2999 && state.selectedItems.length > 0) {
+    //     state.deliverCharges = 115;
+    // }
+
+    // state.platformFee = state.selectedItems.length > 0 ? 15 : 0;
 }
 
 export const { addItem, removeItem, incQuantity, decQuantity } = cartReducer.actions;
