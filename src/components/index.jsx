@@ -10,4 +10,5 @@ export * from "./loader";
 export * from "./otherPageBanner.jsx";
 export * from "./rupee.jsx";
 export * from "./flowerLoader.jsx";
-export * from "./category.jsx"
+export * from "./category.jsx";
+export * from "./message.jsx";

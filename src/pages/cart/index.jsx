@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsX } from "react-icons/bs";
-import { PiPlantThin } from "react-icons/pi";
+// import { PiPlantThin } from "react-icons/pi";
+import { PiPottedPlantLight } from "react-icons/pi";
 
 import { Counter, Sp, Mrp } from "../../components";
 import { discountCalculator, slugify } from "../../utils/customFunctions";
@@ -23,7 +24,7 @@ export function Cart() {
                     {
                         cart.selectedItems.length === 0 ?
                             <h6 style={{ marginTop: "5rem" }}>
-                                <PiPlantThin style={{ position: "relative", top: "2px" }} /> No plants here yet — let’s add a little green to your cart.
+                                <PiPottedPlantLight style={{ position: "relative", top: "2px" }} /> No plants here yet — let’s add a little green to your cart.
                             </h6> :
                             <div className="cart-item-con">
                                 {

@@ -10,7 +10,9 @@ const cartReducer = createSlice({
 
         //addons
         platformFee: 0,
-        deliverCharges: 0
+        deliverCharges: 0,
+
+        notification: null
     },
     reducers: {
         addItem: (state, action) => {
@@ -24,6 +26,10 @@ const cartReducer = createSlice({
                 state.totalItems += 1;
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
+
+                state.notification = { type: "success", msg: "Plant added to cart" };
+            } else {
+                state.notification = { type: "info", msg: "Plant already in cart" };
             }
         },
         removeItem: (state, action) => {
@@ -52,6 +58,9 @@ const cartReducer = createSlice({
                 calculateOtherCharges(state);
             }
         },
+        clearNotification: (state) => {
+            state.notification = null;
+        }
     }
 });
 
@@ -80,5 +89,5 @@ function calculateOtherCharges(state) {
     // state.platformFee = state.selectedItems.length > 0 ? 15 : 0;
 }
 
-export const { addItem, removeItem, incQuantity, decQuantity } = cartReducer.actions;
+export const { addItem, removeItem, incQuantity, decQuantity, clearNotification } = cartReducer.actions;
 export default cartReducer.reducer;

@@ -1,3 +1,4 @@
+
 export function titleCase(name) {
     const removeHypen = name.replace(/-/g, " "); // succulents-and-cacti (removing hypens)
     const splitName = removeHypen.split(" "); // succulents and cacti (spliting it and it becomes this ["succulents", "and", "cacti"])

@@ -2199,6 +2199,24 @@ h3.section-heading {
 
 /* end - loader */
 
+/* start - popup message */
+.popup-msg{
+    @include glass(max-content, 50px);
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+    padding: 1rem;
+    img{
+        filter:invert(1) sepia(0%) saturate(7464%) hue-rotate(144deg) brightness(75%) contrast(111%);
+    }
+    svg{
+        font-size: 1.2rem;
+    }
+}
+/* end - popup message */
+
 /* products add backend */
 .uploadProduct {
     height: 100vh;
@@ -2215,8 +2233,8 @@ h3.section-heading {
         }
     }
 }
-
 /* products add backend */
+
 
 
 // MQ
