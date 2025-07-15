@@ -18,6 +18,7 @@ function App() {
   let error = useSelector(state => state.products.isError);
   let errorMsg = useSelector(state => state.products.error);
 
+  // testing
 
   // getting all the products from db
   const dispatch = useDispatch();
