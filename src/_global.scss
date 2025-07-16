@@ -388,17 +388,17 @@ h6 {
             }
         }
 
-        &:hover {
+        &.active {
             height: 165px;
-        }
 
-        &:hover ul {
-            opacity: 1;
-            pointer-events: unset;
-        }
+            ul {
+                opacity: 1;
+                pointer-events: unset;
+            }
 
-        &:hover img {
-            transform: rotate(180deg);
+            img {
+                transform: rotate(180deg);
+            }
         }
 
         ul {

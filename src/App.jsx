@@ -30,13 +30,14 @@ function App() {
 
   let [notify, setNotify] = useState("");
 
-  useEffect(()=>{
-    if(notification !== null){
+  useEffect(() => {
+    if (notification !== null) {
       setNotify(notification.msg);
     }
     dispatch(clearNotification());
-  },[notification])
-console.log("object", notify);
+  }, [notification]);
+
+  // console.log("object", notify);
 
   if (error && errorMsg != null) {
     return <ErrorPage />
@@ -44,17 +45,17 @@ console.log("object", notify);
   return (
     <>
       {!isAuthPage && <Header />}
-      {state.isLoading ?
-        <main style={{ display: "flex", justifyContent: "center" }}>
-          <FlowerLoader />
-        </main> :
-        <main>
-          {/* PageTop - if you're in the middle of a page and you click a link and next page opens but the new page scrollposition is same as the previous one */}
-          <PageTop />
-          <Outlet />
-          {notification !== null && <Message text={notify} />}
-        </main>
-      }
+      <main>
+        {state.isLoading ?
+          <FlowerLoader /> :
+          <>
+            {/* PageTop - if you're in the middle of a page and you click a link and next page opens but the new page scrollposition is same as the previous one */}
+            <PageTop />
+            <Outlet />
+            {notification !== null && <Message text={notify} />}
+          </>
+        }
+      </main>
       {!isAuthPage && <Footer />
       }
     </>

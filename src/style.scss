@@ -446,9 +446,10 @@ header {
                 // opacity: 1;
 
                 #youtube-player-container {
-                    width: 60%;
-                    height: 75%;
+                    width: 75%;
+                    /* height: 75%; */
                     z-index: 15;
+                    aspect-ratio: 16 / 9;
 
                     iframe {
                         width: 100%;
@@ -1128,6 +1129,7 @@ h3.section-heading {
     height: 200px;
     @include flex-center;
     position: relative;
+    text-align: center;
 
     &::after {
         content: "";
@@ -1614,17 +1616,6 @@ h3.section-heading {
         }
     }
 
-    // .tabs-container .tabs-header .tab.active::before, .tabs-container .tabs-header .tab.active::after {
-    //     content: "";
-    //     position: absolute;
-    //     bottom: 0px;
-    //     background: #55414100;
-    //     /* box-shadow: 0 0 0 #222C1D; */
-    //     display: block;
-    //     width: 50px;
-    //     height: 50px;
-    //     border-radius: 50%;
-    // }
     .tabs-content {
         padding: 2rem;
         background: $darkgreen;
@@ -1897,6 +1888,11 @@ h3.section-heading {
                     justify-content: space-between;
                     flex-wrap: wrap;
 
+                    &.sub-amt {
+                        border-top: 1px solid $wh25;
+                        padding-top: 1rem;
+                    }
+
                     &:last-child {
                         margin-bottom: 0;
                         border-top: 1px solid $wh25;
@@ -1944,6 +1940,7 @@ h3.section-heading {
         justify-content: center;
         column-gap: 2rem;
         row-gap: 5rem;
+        justify-items: center;
     }
 
     .topseller-card {
@@ -2091,9 +2088,13 @@ h3.section-heading {
 }
 
 .flower-con {
-    position: relative;
-    width: 200px;
-    height: 80vh;
+    @include flex-center();
+
+    &>div {
+        position: relative;
+        width: 200px;
+        height: 80vh;
+    }
 
     .flower {
         width: 100%;
@@ -2103,7 +2104,7 @@ h3.section-heading {
         align-items: center;
         animation: roundandround 4s ease-in-out infinite;
         animation-direction: reverse;
-        left: -55%;
+        // left: -55%;
         position: relative;
 
         .petal {
@@ -2200,7 +2201,7 @@ h3.section-heading {
 /* end - loader */
 
 /* start - popup message */
-.popup-msg{
+.popup-msg {
     @include glass(max-content, 50px);
     position: fixed;
     top: 2rem;
@@ -2208,13 +2209,16 @@ h3.section-heading {
     transform: translate(-50%);
     z-index: 999;
     padding: 1rem;
-    img{
-        filter:invert(1) sepia(0%) saturate(7464%) hue-rotate(144deg) brightness(75%) contrast(111%);
+
+    img {
+        filter: invert(1) sepia(0%) saturate(7464%) hue-rotate(144deg) brightness(75%) contrast(111%);
     }
-    svg{
+
+    svg {
         font-size: 1.2rem;
     }
 }
+
 /* end - popup message */
 
 /* products add backend */
@@ -2233,6 +2237,7 @@ h3.section-heading {
         }
     }
 }
+
 /* products add backend */
 
 
@@ -2446,6 +2451,7 @@ h3.section-heading {
 @media (max-width:838px) {
     .product-detail-con {
         padding-bottom: 80px;
+        padding-top: 60px;
     }
 }
 
@@ -2681,6 +2687,13 @@ h3.section-heading {
     .top-seller .swiper .swiper-slide {
         padding-bottom: 2rem;
     }
+
+    .banner .row-con .col .video-con #youtube-player-container {
+        width: 85%;
+        height: 85%;
+        z-index: 15;
+        aspect-ratio: 9 / 16;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2758,6 +2771,26 @@ h3.section-heading {
             }
         }
     }
+
+    .collection-con .options {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 8rem;
+    }
+
+    .tabs-container {
+        .tabs-header {
+            .tab.active {
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 @media (max-width: 320px) {
@@ -2765,6 +2798,10 @@ h3.section-heading {
         .product-card {
             min-width: 250px;
         }
+    }
+
+    .collection-con .topseller-card {
+        max-width: 75%;
     }
 }
 

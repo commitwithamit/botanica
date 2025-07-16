@@ -81,6 +81,14 @@ export function Cart() {
                             <span>Discount</span>
                             <span className="discount">-<Sp>{cart.totalMrp - cart.totalSp}</Sp></span>
                         </div>
+                        <div className="sub-amt">
+                            <span>Subtotal</span>
+                            <span>
+                                {
+                                    <Sp>{cart.totalSp}</Sp>
+                                }
+                            </span>
+                        </div>
                         <div>
                             <span>Platform Fee</span>
                             <span>{cart.selectedItems.length > 0 ? <Sp>{cart.platformFee}</Sp> : <Sp>0</Sp>}</span>
@@ -109,7 +117,10 @@ export function Cart() {
 
                                 }
                             </span>
-                            <p>Free delivery on order above {<Sp>{2999}</Sp>}/-</p>
+                            {
+                                cart.totalSp < 2999 &&
+                                <p>Add plant worth {<Sp>{2999 - cart.totalSp}</Sp>} more to get free delivery! </p>
+                            }
                         </div>
                         <div className="final-amt">
                             <span>Total amount</span>
