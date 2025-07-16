@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsX } from "react-icons/bs";
-import { PiPlantThin } from "react-icons/pi";
+// import { PiPlantThin } from "react-icons/pi";
+import { PiPottedPlantLight } from "react-icons/pi";
 
 import { Counter, Sp, Mrp } from "../../components";
 import { discountCalculator, slugify } from "../../utils/customFunctions";
@@ -23,7 +24,7 @@ export function Cart() {
                     {
                         cart.selectedItems.length === 0 ?
                             <h6 style={{ marginTop: "5rem" }}>
-                                <PiPlantThin style={{ position: "relative", top: "2px" }} /> No plants here yet — let’s add a little green to your cart.
+                                <PiPottedPlantLight style={{ position: "relative", top: "2px" }} /> No plants here yet — let’s add a little green to your cart.
                             </h6> :
                             <div className="cart-item-con">
                                 {
@@ -80,6 +81,14 @@ export function Cart() {
                             <span>Discount</span>
                             <span className="discount">-<Sp>{cart.totalMrp - cart.totalSp}</Sp></span>
                         </div>
+                        <div className="sub-amt">
+                            <span>Subtotal</span>
+                            <span>
+                                {
+                                    <Sp>{cart.totalSp}</Sp>
+                                }
+                            </span>
+                        </div>
                         <div>
                             <span>Platform Fee</span>
                             <span>{cart.selectedItems.length > 0 ? <Sp>{cart.platformFee}</Sp> : <Sp>0</Sp>}</span>
@@ -108,7 +117,10 @@ export function Cart() {
 
                                 }
                             </span>
-                            <p>Free delivery on order above {<Sp>{2999}</Sp>}/-</p>
+                            {
+                                cart.totalSp < 2999 &&
+                                <p>Add plant worth {<Sp>{2999 - cart.totalSp}</Sp>} more to get free delivery! </p>
+                            }
                         </div>
                         <div className="final-amt">
                             <span>Total amount</span>
