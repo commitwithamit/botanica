@@ -2836,6 +2836,22 @@ h3.section-heading {
 }
 
 @media (max-width: 320px) {
+    .banner .row-con .col:last-child .swiper.swiper-initialized.swiper-horizontal.mySwiper {
+        width: 200px !important;
+    }
+
+    .banner .row-con .col:last-child .banner-card {
+        width: 100%;
+    }
+
+    .banner .play-con {
+        text-align: left;
+    }
+
+    .banner .row-con .col .btns-con {
+        flex-direction: column;
+    }
+
     .shop-con .products-con .product-listing {
         .product-card {
             min-width: 250px;
