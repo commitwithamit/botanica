@@ -2204,11 +2204,27 @@ h3.section-heading {
 .popup-msg {
     @include glass(max-content, 50px);
     position: fixed;
-    top: 2rem;
+    bottom: -20%;
     left: 50%;
     transform: translate(-50%);
     z-index: 999;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 2rem;
+    @include flex-center-v;
+    justify-content: space-between;
+    gap: 1rem;
+    font-weight: 700;
+    color: $wh100;
+    opacity: 0;
+    pointer-events: none;
+    animation: toast-popup 1s ease-in-out both;
+
+    &.active {
+        animation: toast-popup 1s ease-in-out forwards;
+    }
+
+    &.hide {
+        animation: toast-popdown 1s ease-in-out forwards;
+    }
 
     img {
         filter: invert(1) sepia(0%) saturate(7464%) hue-rotate(144deg) brightness(75%) contrast(111%);
@@ -2216,6 +2232,32 @@ h3.section-heading {
 
     svg {
         font-size: 1.2rem;
+    }
+}
+
+@keyframes toast-popup {
+    0% {
+        opacity: 0;
+        bottom: -20%;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 5%;
+        pointer-events: unset;
+    }
+}
+
+@keyframes toast-popdown {
+    0% {
+        opacity: 1;
+        bottom: 5%;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: -20%;
+        pointer-events: none;
     }
 }
 

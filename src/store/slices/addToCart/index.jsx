@@ -27,9 +27,9 @@ const cartReducer = createSlice({
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
 
-                state.notification = { type: "success", msg: "Plant added to cart" };
+                state.notification = { type: "success", msg: "Plant added to your cart!" };
             } else {
-                state.notification = { type: "info", msg: "Plant already in cart" };
+                state.notification = { type: "info", msg: "Plant is already in your cart." };
             }
         },
         removeItem: (state, action) => {
