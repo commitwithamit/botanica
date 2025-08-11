@@ -11,6 +11,7 @@ import { removeItem, decQuantity, incQuantity } from "../../store/slices/addToCa
 export function Cart() {
     let cart = useSelector(state => state.cart);
     let dispatch = useDispatch();
+    console.log("car ",  cart.selectedItems);
     return (
         <>
             <div className="other-header">

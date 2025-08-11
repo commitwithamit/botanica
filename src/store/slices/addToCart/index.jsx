@@ -1,12 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const localSelelctedItems = localStorage.getItem("selectedItems") !== null ? JSON.parse(localStorage.getItem("selectedItems")) : [];
+const localTotalItem = localStorage.getItem("totalItems") !== null ? JSON.parse(localStorage.getItem("totalItems")) : 0;
+const localMrp = localStorage.getItem("totalMrp") !== null ? JSON.parse(localStorage.getItem("totalMrp")) : 0;
+const localSp = localStorage.getItem("totalSp") !== null ? JSON.parse(localStorage.getItem("totalSp")) : 0;
+
 const cartReducer = createSlice({
     name: "addToCart",
     initialState: {
-        totalItems: 0,
-        totalMrp: 0,
-        totalSp: 0,
-        selectedItems: [],
+        totalItems: localTotalItem,
+        totalMrp: localMrp,
+        totalSp: localSp,
+        selectedItems: localSelelctedItems,
 
         //addons
         platformFee: 0,
@@ -31,6 +36,9 @@ const cartReducer = createSlice({
             } else {
                 state.notification = { type: "info", msg: "Plant is already in your cart." };
             }
+
+            saveToLocalStorage(state);
+            
         },
         removeItem: (state, action) => {
             let itemExist = state.selectedItems.findIndex(val => val.id === action.payload);
@@ -40,7 +48,7 @@ const cartReducer = createSlice({
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
-
+            saveToLocalStorage(state);
         },
         incQuantity: (state, action) => {
             let itemExist = state.selectedItems.find(val => val.id === action.payload);
@@ -49,6 +57,7 @@ const cartReducer = createSlice({
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
+            saveToLocalStorage(state);
         },
         decQuantity: (state, action) => {
             let itemExist = state.selectedItems.find(val => val.id === action.payload);
@@ -57,6 +66,7 @@ const cartReducer = createSlice({
                 calculateMrpAndSp(state);
                 calculateOtherCharges(state);
             }
+            saveToLocalStorage(state);
         },
         clearNotification: (state) => {
             state.notification = null;
@@ -87,6 +97,14 @@ function calculateOtherCharges(state) {
     // }
 
     // state.platformFee = state.selectedItems.length > 0 ? 15 : 0;
+}
+
+function saveToLocalStorage(state) {
+    // saving to localStorage (for persistance cart data after refreshing)
+    localStorage.setItem("selectedItems", JSON.stringify(state.selectedItems));
+    localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
+    localStorage.setItem("totalMrp", JSON.stringify(state.totalMrp));
+    localStorage.setItem("totalSp", JSON.stringify(state.totalSp));
 }
 
 export const { addItem, removeItem, incQuantity, decQuantity, clearNotification } = cartReducer.actions;
